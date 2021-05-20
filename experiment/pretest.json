@@ -1,18 +1,38 @@
 [
-{"question":"This is a Sample Question 1?",
+{"question":"1. For a dark input image (most pixels have low gray values), which of the following transformations on gray values(r) produces a better image",
 "answers":{
-            "a":"answer1",
-            "b":"answer2",
-            "c":"answer3",
-            "d":"answer4"
+            "a":"log(r)",
+            "b":"r + a; a > 0",
+            "c":"ar+b; a and b are > 0",
+            "d":"None of the above"
           },
 "correctAnswer":"a"},
-{"question":"This is a Sample Question 2?",
+
+{"question":"2. The linear transformation function f(r) =4r+160 produces which of the following changes in input image, where r denotes gray values of input image?",
 "answers":{
-            "a":"answer1",
-            "b":"answer2",
-            "c":"answer3",
-            "d":"answer4"
+            "a":"Increased contrast",
+            "b":"Decreased brightness",
+            "c":"Increased brightness",
+            "d":"No change"
           },
-"correctAnswer":"c"} 
+"correctAnswer":"c"}, 
+
+{"question":"3. In windowing, gray values falling beyond the upper range of the window are",
+"answers":{
+            "a":"Reduced to zero",
+            "b":"Raised to 255",
+            "c":"Not changed",
+            "d":"Reduced by half"
+          },
+"correctAnswer":"a"},
+
+{"question":"4. Which of the following will produce the negative image of given input image",
+"answers":{
+            "a":"Add each pixel from the maximum pixel value",
+            "b":"Subtract each pixel from the maximum pixel value",
+            "c":"Divide each pixel from the maximum pixel value",
+            "d":"Multiply each pixel from the maximum pixel value"
+          },
+"correctAnswer":"c"}
+
 ]
