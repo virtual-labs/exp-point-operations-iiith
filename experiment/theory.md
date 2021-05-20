@@ -28,10 +28,10 @@ where c is a constant variable. This function converts a narrow range of low gra
 
 **Clipping:** The value of output pixel is related to the input pixel value in piece-wise linear fashion. Though such functions are complex and require user input but useful in many practical situations. This function is defined as
 
-<img src="point/image1.jpg">
+<img src="images/image1.jpg">
 
 where, a and b are constant variables which define input pixel value range in which linear function with a slope s and offset o is applied. In gray level image, value of L is 255. In our experiment section, we kept value of offset fixed to zero.
 
 **Window:** This function is similar to the clipper. In this, only a desired range of gray levels is preserved in the output image. It is defined as:
 
-<img src="point/image2.jpg">
+<img src="images/image2.jpg">
