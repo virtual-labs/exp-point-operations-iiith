@@ -15,24 +15,6 @@
             "c":"Increased brightness",
             "d":"No change"
           },
-"correctAnswer":"c"}, 
-
-{"question":"3. In windowing, gray values falling beyond the upper range of the window are",
-"answers":{
-            "a":"Reduced to zero",
-            "b":"Raised to 255",
-            "c":"Not changed",
-            "d":"Reduced by half"
-          },
-"correctAnswer":"a"},
-
-{"question":"4. Which of the following will produce the negative image of given input image",
-"answers":{
-            "a":"Add each pixel from the maximum pixel value",
-            "b":"Subtract each pixel from the maximum pixel value",
-            "c":"Divide each pixel from the maximum pixel value",
-            "d":"Multiply each pixel from the maximum pixel value"
-          },
 "correctAnswer":"c"}
 
 ]
