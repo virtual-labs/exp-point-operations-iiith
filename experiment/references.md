@@ -1,11 +1,3 @@
-1. Image Enhancement [http://funnotes.net/tofpa...t22](http://funnotes.net/tofpa...t22)
-
-2. Pixel brightness transformation [http://www.icaen.uiowa.e.../PreProcessing1.html](http://www.icaen.uiowa.e.../PreProcessing1.html)
-
-3. Image Enhancement [http://www.google.co.in/url?sa=t&...vriQ](http://www.google.co.in/url?sa=t&...vriQ)
-
-4. Gray scale transformations [http://www.google.co.in/url?sa=t&...5dbA](http://www.google.co.in/url?sa=t&...5dbA)
-
 **Books:**
 
 1. A.K.Jain, Fundamentals of Digital Image Processing, Prentice-Hall, 1989.
