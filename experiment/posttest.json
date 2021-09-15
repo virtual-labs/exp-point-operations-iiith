@@ -1,18 +1,21 @@
 [
-{"question":"This is a Sample Question 1?",
+{"question":"1. In windowing, gray values falling beyond the upper range of the window are",
 "answers":{
-            "a":"answer1",
-            "b":"answer2",
-            "c":"answer3",
-            "d":"answer4"
+            "a":"Reduced to zero",
+            "b":"Raised to 255",
+            "c":"Not changed",
+            "d":"Reduced by half"
           },
 "correctAnswer":"a"},
-{"question":"This is a Sample Question 2?",
+
+{"question":"2. Which of the following will produce the negative image of given input image",
 "answers":{
-            "a":"answer1",
-            "b":"answer2",
-            "c":"answer3",
-            "d":"answer4"
+            "a":"Add each pixel from the maximum pixel value",
+            "b":"Subtract each pixel from the maximum pixel value",
+            "c":"Divide each pixel from the maximum pixel value",
+            "d":"Multiply each pixel from the maximum pixel value"
           },
-"correctAnswer":"c"} 
+"correctAnswer":"c"}
+
+
 ]
