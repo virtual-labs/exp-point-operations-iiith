@@ -1,5 +1,5 @@
-1. To learn image enhancement through point transformation
-  i. Linear transformation  
-  ii. Non-linear transformation  
-  iii. Clipping (piecewise linear)  
-  iv. Gray level windowing  
+To learn image enhancement through point transformation
+  1. Linear transformation  
+  2. Non-linear transformation  
+  3. Clipping (piecewise linear)  
+  4. Gray level windowing  
