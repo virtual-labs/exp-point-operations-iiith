@@ -1,0 +1,158 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. What is the main characteristic of a point operation in image processing?",
+      "answers": {
+        "a": "The output pixel value depends only on the corresponding input pixel value",
+        "b": "The output pixel value depends only on neighbouring pixels",
+        "c": "The image must first be converted into a binary image",
+        "d": "The operation can be applied only to colour images"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. In a point operation, the output pixel value is obtained by applying a transformation to the corresponding input pixel value.",
+        "b": "Incorrect. This describes a neighbourhood-based operation, where surrounding pixels contribute to the output.",
+        "c": "Incorrect. A point operation does not require the input image to be converted into a binary image.",
+        "d": "Incorrect. Point operations can be applied to grayscale images, including the grayscale images considered in this experiment."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "2. For an 8-bit grayscale image, what is the usual valid range of a pixel value $p$?",
+      "answers": {
+        "a": "$1 \\leq p \\leq 256$",
+        "b": "$0 \\leq p \\leq 255$",
+        "c": "$0 \\leq p \\leq 256$",
+        "d": "$-255 \\leq p \\leq 255$"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. This range excludes one endpoint of the grayscale range and includes a value outside the usual 8-bit range.",
+        "b": "Correct. An 8-bit grayscale image normally represents pixel values from $0$ to $255$.",
+        "c": "Incorrect. The value $256$ is outside the usual valid range for an 8-bit grayscale pixel.",
+        "d": "Incorrect. Negative pixel values are not part of the usual valid grayscale range for an 8-bit image."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. In the linear point transformation $q = sp + o$, which parameter determines the slope of the transformation?",
+      "answers": {
+        "a": "$o$",
+        "b": "$q$",
+        "c": "$s$",
+        "d": "$p$"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. In the linear transformation, this parameter represents the offset rather than the slope.",
+        "b": "Incorrect. This symbol represents the output pixel value produced by the transformation.",
+        "c": "Correct. In $q = sp + o$, $s$ is the slope of the transformation and controls how the input gray levels are stretched or compressed.",
+        "d": "Incorrect. This symbol represents the input pixel value to which the transformation is applied."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "4. A linear point transformation is given by $q = 4p + 160$. For an input pixel with $p = 20$, what is the transformed value before any range adjustment?",
+      "answers": {
+        "a": "$80$",
+        "b": "$180$",
+        "c": "$220$",
+        "d": "$240$"
+      },
+      "correctAnswer": "d",
+      "explanations": {
+        "a": "Incorrect. This value does not result from substituting $p = 20$ into the given transformation.",
+        "b": "Incorrect. This value does not include the full contribution of the slope term in the given transformation.",
+        "c": "Incorrect. This value does not result from substituting $p = 20$ into the given transformation.",
+        "d": "Correct. Substituting $p = 20$ gives $q = 4(20) + 160 = 240$."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "5. Which transformation is particularly useful for expanding a narrow range of low-intensity values while compressing higher-intensity values?",
+      "answers": {
+        "a": "Logarithmic transformation",
+        "b": "Window function",
+        "c": "Clipping transformation",
+        "d": "Constant-value transformation"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. A logarithmic transformation such as $q = c \\log(1+p)$ expands a narrow range of low-intensity values while compressing higher-intensity values.",
+        "b": "Incorrect. A window function is used to preserve a selected range of input gray levels rather than to provide the logarithmic mapping described here.",
+        "c": "Incorrect. Clipping uses a piece-wise linear mapping with specified input limits.",
+        "d": "Incorrect. A constant-value transformation does not provide the nonlinear intensity mapping described in this experiment."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "6. In the clipping transformation, what happens to an input pixel value $p$ that is greater than the upper limit $b$?",
+      "answers": {
+        "a": "It is mapped to $0$",
+        "b": "It is mapped to $255$ for the 8-bit grayscale case",
+        "c": "It is multiplied by $s$",
+        "d": "It is left unchanged in every case"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. The lower output value is associated with input values below the lower limit in the clipping function.",
+        "b": "Correct. For the 8-bit grayscale case described in the experiment, an input value above $b$ is mapped to the upper output value $255$.",
+        "c": "Incorrect. Multiplication by the slope applies to the linear part of the piece-wise transformation within the specified input interval.",
+        "d": "Incorrect. The clipping function changes input values that fall outside the specified interval."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "7. Consider a window function that preserves the input range $a \\leq p \\leq b$ and maps values outside this range to $0$. What is the main purpose of this operation?",
+      "answers": {
+        "a": "To preserve all gray levels without modification",
+        "b": "To make every pixel equal to $255$",
+        "c": "To select a desired range of gray levels for the output",
+        "d": "To make the output depend on neighbouring pixels"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. A window function specifically suppresses input values outside the selected range.",
+        "b": "Incorrect. A window function does not map every pixel to the maximum grayscale value.",
+        "c": "Correct. The window function preserves a selected range of gray levels and suppresses values outside that range.",
+        "d": "Incorrect. A window function is a point operation, so the output is determined from the corresponding input pixel rather than its neighbours."
+      },
+      "difficulty": "advanced"
+    },
+    {
+      "question": "8. Two point transformations are applied to the same input image. Transformation A is linear, while Transformation B is logarithmic. Which statement best describes their difference?",
+      "answers": {
+        "a": "Both transformations must produce identical output values",
+        "b": "Transformation A uses neighbouring pixels, while Transformation B uses one pixel",
+        "c": "Transformation A can only decrease pixel values, while Transformation B can only increase them",
+        "d": "The relationship between input and output pixel values is linear for A and nonlinear for B"
+      },
+      "correctAnswer": "d",
+      "explanations": {
+        "a": "Incorrect. Different transformation functions can map the same input pixel values to different output values.",
+        "b": "Incorrect. Both transformations described here are point operations and use the corresponding input pixel value.",
+        "c": "Incorrect. The effect of a transformation depends on its parameters and the input values; these restrictions do not characterize the two transformations.",
+        "d": "Correct. A linear transformation has a linear relationship between $p$ and $q$, whereas the logarithmic transformation has a nonlinear relationship."
+      },
+      "difficulty": "advanced"
+    },
+    {
+      "question": "9. Suppose a point operation produces an output value $q$ outside the valid range $0 \\leq q \\leq 255$. What is required before the value can be represented as a valid 8-bit grayscale pixel?",
+      "answers": {
+        "a": "The value must be adjusted or mapped so that it lies within the valid grayscale range",
+        "b": "The value must always be replaced by the input pixel value",
+        "c": "The value must always be converted into a negative number",
+        "d": "The value must be made dependent on neighbouring pixels"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. The transformed value must be brought into the valid 8-bit grayscale range before it can be represented as an 8-bit pixel.",
+        "b": "Incorrect. Replacing the result with the original input value would discard the effect of the selected point transformation.",
+        "c": "Incorrect. Negative values are outside the valid range for an 8-bit grayscale pixel.",
+        "d": "Incorrect. Introducing neighbouring pixels would change the operation from a point operation to a neighbourhood-based operation."
+      },
+      "difficulty": "advanced"
+    }
+  ]
+}

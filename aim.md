@@ -1,0 +1,1 @@
+The aim of this experiment is to study point transformations for modifying the intensity values of individual pixels, using linear, non-linear, clipping, and gray-level windowing transformations, and to understand their effect on the visual appearance of an image.

@@ -1,0 +1,158 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. In a point operation, if the input pixel value at location $(x,y)$ is $p$, how is the corresponding output pixel value $q$ determined?",
+      "answers": {
+        "a": "$q = T(p)$",
+        "b": "$q = T(x,y)$",
+        "c": "$q = T(p,x,y)$ using neighbouring pixels",
+        "d": "$q = p + x + y$"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. A point operation maps the input pixel value $p$ to the output pixel value $q$ using the transformation function $T$.",
+        "b": "Incorrect. The transformation is defined in terms of the input pixel value rather than directly using the pixel coordinates as its argument.",
+        "c": "Incorrect. A point operation does not require neighbouring pixel values as part of the transformation.",
+        "d": "Incorrect. The coordinates $x$ and $y$ are not added directly to the input pixel value in the point-operation formulation."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "2. Which parameter pair in the linear transformation $q = sp + o$ is responsible for changing the contrast and brightness of an image?",
+      "answers": {
+        "a": "$p$ and $q$",
+        "b": "$s$ and $o$",
+        "c": "$x$ and $y$",
+        "d": "$a$ and $b$ only"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. These symbols represent the input and output pixel values, not the adjustable parameters of the linear transformation.",
+        "b": "Correct. In $q = sp + o$, the slope $s$ controls stretching or compression of gray levels, while the offset $o$ shifts the gray levels.",
+        "c": "Incorrect. These symbols denote pixel coordinates rather than the parameters controlling the linear mapping.",
+        "d": "Incorrect. The symbols $a$ and $b$ define input limits in the clipping and window functions; they are not the parameter pair in this linear expression."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. Which of the following is a nonlinear transformation discussed in the Point Operations experiment?",
+      "answers": {
+        "a": "$q = sp + o$",
+        "b": "$q = p$",
+        "c": "$q = c \\log(1+p)$",
+        "d": "$q = p + o$"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. This expression represents a linear transformation because the output is linearly related to the input.",
+        "b": "Incorrect. This expression represents an unchanged linear mapping rather than the nonlinear transformation discussed in the experiment.",
+        "c": "Correct. The logarithmic transformation $q = c \\log(1+p)$ is a nonlinear point transformation.",
+        "d": "Incorrect. This expression is linear in $p$ because the input is multiplied by a constant coefficient of $1$ and then shifted."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "4. A linear transformation is given by $q = 2p + 10$. What is the output value for an input pixel with $p = 50$, before any range adjustment?",
+      "answers": {
+        "a": "$60$",
+        "b": "$90$",
+        "c": "$100$",
+        "d": "$110$"
+      },
+      "correctAnswer": "d",
+      "explanations": {
+        "a": "Incorrect. This value does not result from applying both the scaling and offset terms in the given transformation.",
+        "b": "Incorrect. This value does not result from substituting $p = 50$ into the given expression.",
+        "c": "Incorrect. This value accounts for the scaling term but not the complete transformation.",
+        "d": "Correct. Substituting $p = 50$ gives $q = 2(50) + 10 = 110$."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "5. An image contains many low-intensity pixels, and the goal is to expand their range while compressing higher-intensity values. Which transformation is most appropriate according to the experiment?",
+      "answers": {
+        "a": "Logarithmic transformation",
+        "b": "Window function",
+        "c": "Clipping transformation",
+        "d": "Neighbourhood averaging"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. The logarithmic transformation expands a narrow range of low-intensity values while compressing higher-intensity values.",
+        "b": "Incorrect. A window function selects and preserves a specified range of gray levels rather than providing the described logarithmic expansion and compression.",
+        "c": "Incorrect. Clipping uses a piece-wise linear mapping with limits rather than the nonlinear mapping described here.",
+        "d": "Incorrect. Neighbourhood averaging uses surrounding pixels and is not a point transformation discussed in this experiment."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "6. For the clipping transformation, suppose $a = 50$, $b = 200$, and the input pixel value is $p = 220$. What is the output value for the 8-bit grayscale case?",
+      "answers": {
+        "a": "$0$",
+        "b": "$50$",
+        "c": "$200$",
+        "d": "$255$"
+      },
+      "correctAnswer": "d",
+      "explanations": {
+        "a": "Incorrect. This output is associated with input values below the lower limit in the clipping function.",
+        "b": "Incorrect. This value is the lower input boundary, not the specified output for an input above the upper boundary.",
+        "c": "Incorrect. This value is the upper input boundary, not the output assigned beyond that boundary.",
+        "d": "Correct. Since $p = 220$ is greater than $b = 200$, the clipping function maps it to $255$ for an 8-bit grayscale image."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "7. A window function is configured with an input range $a \\leq p \\leq b$. What happens to an input pixel value satisfying $p < a$ or $p > b$?",
+      "answers": {
+        "a": "It is mapped to $255$",
+        "b": "It is mapped to $0$",
+        "c": "It is multiplied by the input coordinate",
+        "d": "It is replaced by the value of a neighbouring pixel"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. The window function described in the experiment suppresses values outside the selected range rather than assigning them the maximum grayscale value.",
+        "b": "Correct. In the window function, values outside the selected input range are mapped to $0$.",
+        "c": "Incorrect. Pixel coordinates are not used in this way by the point-operation mapping.",
+        "d": "Incorrect. Replacing a pixel using a neighbouring pixel would involve a neighbourhood operation rather than a point operation."
+      },
+      "difficulty": "advanced"
+    },
+    {
+      "question": "8. Consider two input pixels with values $p_1 = 40$ and $p_2 = 180$. A window function preserves only the range $50 \\leq p \\leq 150$. Which statement correctly describes the outputs for these two pixels?",
+      "answers": {
+        "a": "Both pixels are mapped to $255$",
+        "b": "Both pixels are mapped to $0$",
+        "c": "The first is mapped to $0$, while the second is processed within the selected range",
+        "d": "The first is processed within the selected range, while the second is mapped to $0$"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. The window function described here does not assign $255$ to all input values outside the selected range.",
+        "b": "Correct. Both $40$ and $180$ lie outside the selected range $50 \\leq p \\leq 150$, so both are mapped to $0$.",
+        "c": "Incorrect. Although $40$ is outside the selected range, $180$ is also outside that range.",
+        "d": "Incorrect. The input value $40$ is below the selected range, so it is not processed as a value within the window."
+      },
+      "difficulty": "advanced"
+    },
+    {
+      "question": "9. A point transformation maps some input values outside the valid 8-bit grayscale range. Why is range adjustment important in this experiment?",
+      "answers": {
+        "a": "It ensures that the transformed values can be represented within the valid grayscale range",
+        "b": "It makes every point operation depend on neighbouring pixels",
+        "c": "It guarantees that every output pixel has the same intensity",
+        "d": "It removes the transformation function from the processing step"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. Range adjustment is needed so that transformed values can be represented within the valid range of an 8-bit grayscale image.",
+        "b": "Incorrect. Range adjustment changes the pixel values to fit the allowed range; it does not introduce neighbouring-pixel dependence.",
+        "c": "Incorrect. Bringing values into a valid range does not make all output pixels equal.",
+        "d": "Incorrect. Range adjustment is applied to the result of a transformation and does not eliminate the transformation itself."
+      },
+      "difficulty": "advanced"
+    }
+  ]
+}
